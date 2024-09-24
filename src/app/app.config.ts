@@ -12,7 +12,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()),
     provideStockApp({
       mockApi: {
-        delay: 1000,
+        delay: 0,
         services: mockApiServices
       },
     })

@@ -34,7 +34,7 @@ export class MockSignalrService {
         Object.keys(stocks).forEach(symbol => {
           const stock = stocks[symbol];
           if (!stock.disabled) {
-            const priceChange = (Math.random() * 10 - 5); // Random price change between -5 and +5
+            const priceChange = (Math.random() * 10 - 5);
             stock.currentPrice += priceChange;
             stock.highPrice = Math.max(stock.currentPrice, stock.highPrice);
             stock.lowPrice = Math.min(stock.currentPrice, stock.lowPrice);
