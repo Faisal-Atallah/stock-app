@@ -1,0 +1,18 @@
+<div class="stocks-container">
+    @for (stock of stocks | keyvalue; track stock.key) {
+    <div [ngClass]="{
+                'disabled-stock': stock.value.disabled,
+                'positive-price': stock.value.currentPrice >= stock.value.previousClose,
+                'negative-price': stock.value.currentPrice < stock.value.previousClose
+              }" class="stock-card">
+        <h3>{{ stock.value.name }}</h3>
+        <p>Current Price: {{ stock?.value?.currentPrice | number: '1.2-2' }}</p>
+        <p>Daily High: {{ stock?.value?.highPrice | number: '1.2-2' }}</p>
+        <p>Daily Low: {{ stock?.value?.lowPrice | number: '1.2-2' }}</p>
+        <p *ngIf="isDesktopView">52 Week High: {{ stock?.value?.week52High | number: '1.2-2' }}</p>
+        <p *ngIf="isDesktopView">52 Week Low: {{ stock?.value?.week52Low | number: '1.2-2' }}</p>
+        <app-toggle-button (toggleStock)="toggleStock(stock.key,$event)" [disabled]="stock.value.disabled">
+        </app-toggle-button>
+    </div>
+    }
+</div>

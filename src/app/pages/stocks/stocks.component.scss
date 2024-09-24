@@ -1,0 +1,36 @@
+@import "colors";
+
+.stocks-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.stock-card {
+  width: 20%;
+  text-align: center;
+  padding: 15px;
+  margin: 10px;
+  border: 1px solid transparent;
+  background-color: $white;
+  color: $police-blue;
+  border-radius: 8px;
+}
+
+.positive-price {
+  background-color: $green;
+}
+
+.negative-price {
+  background-color: $cinnabar;
+}
+
+.disabled-stock {
+  background-color: $bright-gray;
+}
+
+@media (max-width: 600px) {
+  .stock-card {
+    width: 100%;
+  }
+}

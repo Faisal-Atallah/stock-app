@@ -1,0 +1,9 @@
+<div class="toggle-switch">
+    <label class="switch">
+        <input type="checkbox" [checked]="!disabled()" (change)="onToggleChange()">
+        <span class="slider">
+            <span class="on-text" *ngIf="!disabled()">ON</span>
+            <span class="off-text" *ngIf="disabled()">OFF</span>
+        </span>
+    </label>
+</div>
