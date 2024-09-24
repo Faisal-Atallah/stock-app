@@ -1,10 +1,10 @@
 export type StockData = {
     name: string;
-    currentPrice: number | null;
-    highPrice: number | null;
-    lowPrice: number | null;
-    week52High?: number | null;
-    week52Low?: number | null;
+    currentPrice: number;
+    highPrice: number;
+    lowPrice: number;
+    week52High?: number;
+    week52Low?: number;
     disabled?: boolean;
     previousClose: number;
 }
